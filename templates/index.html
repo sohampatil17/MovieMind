@@ -189,13 +189,20 @@
                 `).join('');
 
             } catch (error) {
-                results.innerHTML = `
-                    <div class="col-span-full text-center bg-red-500/10 rounded-lg p-6">
-                        <p class="text-lg text-red-400">${error.message}</p>
-                        <p class="text-sm mt-2 text-gray-400">Please try again with a different search query.</p>
-                    </div>
-                `;
-            } finally {
+                    results.innerHTML = `
+                        <div class="col-span-full text-center bg-red-500/10 rounded-lg p-6">
+                            <p class="text-lg text-red-400">
+                                ${error.message === 'Unexpected token' 
+                                    ? 'Sorry, there was an error processing your search. Please try a different query.' 
+                                    : error.message}
+                            </p>
+                            <p class="text-sm mt-2 text-gray-400">
+                                Try using simpler search terms or checking for special characters.
+                            </p>
+                        </div>
+                    `;
+            }
+ finally {
                 loading.classList.add('hidden');
             }
         }
