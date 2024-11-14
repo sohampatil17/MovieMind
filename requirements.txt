@@ -3,10 +3,10 @@ pymongo==4.5.0
 python-dotenv==1.0.0
 boto3==1.28.44
 openai==1.54.4
-langchain-openai==0.2.8
-langchain-core==0.3.18
-langchain-community==0.0.13
-llama-index==0.9.41
+langchain-core>=0.4.0
+langchain-openai>=0.2.8
+llama-index>=0.9.41
 gunicorn==21.2.0
-packaging>=23.2
 tiktoken>=0.5.2
+packaging>=23.2
+langchain-community>=0.0.13
